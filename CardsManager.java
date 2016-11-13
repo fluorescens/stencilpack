@@ -2,9 +2,7 @@
 The card layout class holds a single frame which manages all subframes
 and presents the three top level navigation controls. 
 
-REFACTOR REPORT: TODO
-    Still uses debug name for output file. Make it use the supplied name in crunchypack input header. (HIGH)
-    Uses String instead of stringbuilder for master output. (LOW: This is not a speed-critical component. Saves milliseconds at best.)
+
  */
 package stencilui;
 import java.awt.*; 
@@ -162,7 +160,7 @@ public class CardsManager extends JFrame{
         cardPanel.add(frame_display2, "2"); 
         
         //Add the top level navigation buttons
-        JButton button_exit = new JButton("Exit");
+        JButton button_exit = new JButton("Back");
         button_exit.setFont(new Font("Courier", Font.PLAIN, 20));
         button_exit.addActionListener(new ActionListener()
         {
@@ -191,7 +189,7 @@ public class CardsManager extends JFrame{
         buttonpack.add(button_exit, gb_constrain_exitpanel);
          
         //window 2 launch button
-        JButton button_sitelaunch = new JButton("Visit the Site"); 
+        JButton button_sitelaunch = new JButton("Visit the Repo"); 
                 button_sitelaunch.setFont(new Font("Coutier", Font.PLAIN, 20));
          button_sitelaunch.addActionListener(new ActionListener()
         {
