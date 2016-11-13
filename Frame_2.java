@@ -30,113 +30,17 @@ public class Frame_2 extends GFrame{
     static JTextArea crunchypack_source; 
     
     public Frame_2() {
-        javax.swing.UIManager.put("OptionPane.font", new Font("yourFontName", Font.BOLD, 30));
+        javax.swing.UIManager.put("OptionPane.font", new Font("defaultFont", Font.BOLD, 30));
         this.setLayout(new GridBagLayout()); //use this layout
         this.setBackground(Color.GRAY);
         GridBagConstraints c = new GridBagConstraints(); //container holding gridbag components
 
         JLabel local_title = new JLabel("Initial Setup: Get a Screenshot", SwingConstants.CENTER); 
-            local_title.setFont(new Font("Courier",1, 30));
+            local_title.setFont(new Font("defaultFont",1, 30));
         JTextArea textarea = new JTextArea(10, 20);
         JScrollPane scroll = new JScrollPane(textarea);
 
-        
-      //object code, 
-      /*
-       JPanel h_panel_1 = new JPanel();
-            h_panel_1.setBackground(Color.RED);
-            c.anchor = GridBagConstraints.NORTHWEST;
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 0; 
-            c.gridy = 0; 
-            this.add(h_panel_1, c);
-
-            JPanel h_panel_2 = new JPanel();
-            h_panel_2.setBackground(Color.GREEN);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL;  
-            c.weightx = 0.1; 
-            c.gridx = 1; 
-            c.gridy = 0; 
-            this.add(h_panel_2, c);
-
-            JPanel h_panel_3 = new JPanel();
-            h_panel_3.setBackground(Color.RED);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 2; 
-            c.gridy = 0; 
-            this.add(h_panel_3, c);
-
-                    JPanel h_panel_4 = new JPanel();
-            h_panel_4.setBackground(Color.GREEN);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 3; 
-            c.gridy = 0; 
-            this.add(h_panel_4, c);
-
-                    JPanel h_panel_5 = new JPanel();
-            h_panel_5.setBackground(Color.RED);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 4; 
-            c.gridy = 0; 
-            this.add(h_panel_5, c);
-
-                    JPanel h_panel_6 = new JPanel();
-            h_panel_6.setBackground(Color.GREEN);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 5; 
-            c.gridy = 0; 
-            this.add(h_panel_6, c);
-
-                    JPanel h_panel_7 = new JPanel();
-            h_panel_7.setBackground(Color.RED);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 6; 
-            c.gridy = 0; 
-            this.add(h_panel_7, c);
-
-            JPanel h_panel_8 = new JPanel();
-            h_panel_8.setBackground(Color.GREEN);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 7; 
-            c.gridy = 0; 
-            this.add(h_panel_8, c);
-
-            JPanel h_panel_9 = new JPanel();
-            h_panel_9.setBackground(Color.RED);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL;  
-            c.weightx = 0.1; 
-            c.gridx = 8; 
-            c.gridy = 0; 
-            this.add(h_panel_9, c);
-
-            JPanel h_panel_10 = new JPanel();
-            h_panel_10.setBackground(Color.GREEN);
-            c.anchor = GridBagConstraints.NORTH;
-            c.fill = GridBagConstraints.HORIZONTAL; 
-            c.weightx = 0.1; 
-            c.gridx = 9; 
-            c.gridy = 0; 
-            this.add(h_panel_10, c);
-
-      
-      */
-           
+       
 
             //-------------------------------------------------------VPANEL
 
@@ -146,35 +50,43 @@ public class Frame_2 extends GFrame{
             v_panel_1.setBackground(Color.BLUE);
             gb_constrain_titlepanel.anchor = GridBagConstraints.NORTHWEST;
             gb_constrain_titlepanel.fill = GridBagConstraints.HORIZONTAL; 
-            gb_constrain_titlepanel.weighty = 0; 
+            gb_constrain_titlepanel.weighty = 0.1; 
+            gb_constrain_titlepanel.weightx = 1;
             gb_constrain_titlepanel.gridwidth = 10; 
             gb_constrain_titlepanel.gridheight = 1; 
-            gb_constrain_titlepanel.ipady = 10; 
             gb_constrain_titlepanel.gridx = 0; 
             gb_constrain_titlepanel.gridy = 1; 
+            gb_constrain_titlepanel.ipady = 10; 
             local_title.setForeground(Color.WHITE);
             v_panel_1.add(local_title); 
             this.add(v_panel_1, gb_constrain_titlepanel);
 
 
-            JPanel v_panel_2 = new JPanel();
+            
+            /*
+            
+                        JPanel v_panel_2 = new JPanel();
             GridBagConstraints v2 = new GridBagConstraints(); //container holding gridbag components
             v_panel_2.setBackground(Color.GREEN);
             v2.anchor = GridBagConstraints.NORTHWEST;
             v2.fill = GridBagConstraints.HORIZONTAL; 
             v2.gridwidth = 10; 
-            v2.gridheight = 2; 
+            v2.gridheight = 1; 
             v2.weighty = 0; 
-            v2.ipady = 20; 
+            v2.weightx = 0.1;
+            //v2.ipady = 20; 
             v2.gridx = 0; 
             v2.gridy = 2; 
             this.add(v_panel_2, v2);
+            */
+
 
 
 
         //get the location of the screenshot source 
         JLabel scr_shot = new JLabel("Screenshot Location: "); 
-                       scr_shot.setFont(new Font("Courier",1, 18));
+                       scr_shot.setFont(new Font("defaultFont",1, 18));
+                       scr_shot.setForeground(Color.GREEN);
         JPanel v_panel_3 = new JPanel();
         v_panel_3.add(scr_shot); 
         GridBagConstraints gb_constrain_screenshotlabel = new GridBagConstraints(); //container holding gridbag components
@@ -188,27 +100,30 @@ public class Frame_2 extends GFrame{
         this.add(v_panel_3, gb_constrain_screenshotlabel);
             
        screenshot_source = new JTextArea(); 
-                 screenshot_source.setFont(new Font("Courier",1, 18));
+                 screenshot_source.setFont(new Font("defaultFont",1, 18));
+        JScrollPane sscrrensource_pane = new JScrollPane(screenshot_source); 
+        sscrrensource_pane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         GridBagConstraints gb_constrain_screenshottxt = new GridBagConstraints(); //container holding gridbag components
         gb_constrain_screenshottxt.anchor = GridBagConstraints.SOUTH;
         gb_constrain_screenshottxt.fill = GridBagConstraints.BOTH; 
-        gb_constrain_screenshottxt.weighty = 0; 
+        gb_constrain_screenshottxt.weighty = 0;
+        gb_constrain_screenshottxt.weightx = 1; 
         gb_constrain_screenshottxt.gridwidth = 8; 
         gb_constrain_screenshottxt.gridheight = 1; 
         gb_constrain_screenshottxt.gridx = 1; 
         gb_constrain_screenshottxt.gridy = 5; 
-	this.add(screenshot_source, gb_constrain_screenshottxt);
+	this.add(sscrrensource_pane, gb_constrain_screenshottxt);
         
         
         //help button about getting a screenshot
         JButton pick_src = new JButton("Getting a Screenshot"); 
-                pick_src.setFont(new Font("Courier",1, 15));
+                pick_src.setFont(new Font("defaultFont",1, 15));
         GridBagConstraints gb_constrain_getscreen = new GridBagConstraints(); //container holding gridbag components
-        gb_constrain_getscreen.anchor = GridBagConstraints.CENTER;
+        gb_constrain_getscreen.anchor = GridBagConstraints.WEST;
         gb_constrain_getscreen.weighty = 0; 
-        gb_constrain_getscreen.gridwidth = 1; 
+        gb_constrain_getscreen.gridwidth = 2; 
         gb_constrain_getscreen.gridheight = 1; 
-        gb_constrain_getscreen.gridx = 4; 
+        gb_constrain_getscreen.gridx = 1; 
         gb_constrain_getscreen.gridy = 6; 
 	this.add(pick_src, gb_constrain_getscreen);
         pick_src.addActionListener(new ActionListener() //exit
@@ -252,8 +167,9 @@ public class Frame_2 extends GFrame{
         
         
         //get the location of the crunchypack file generated by CrunchyUI
-        JLabel scr_crunchypack = new JLabel("Crunchypack Location: "); 
-                       scr_crunchypack.setFont(new Font("Courier",1, 18));
+        JLabel scr_crunchypack = new JLabel("Crunchypack File: "); 
+                       scr_crunchypack.setFont(new Font("defaultFont",1, 18));
+                       scr_crunchypack.setForeground(Color.GREEN); 
         JPanel v_panel_6 = new JPanel();
         v_panel_6.add(scr_crunchypack); 
         GridBagConstraints gb_constrain_cpackpanel = new GridBagConstraints(); //container holding gridbag components
@@ -267,8 +183,10 @@ public class Frame_2 extends GFrame{
         this.add(v_panel_6, gb_constrain_cpackpanel);
 
         crunchypack_source = new JTextArea(); 
-                  crunchypack_source.setFont(new Font("Courier",1, 18));
+                  crunchypack_source.setFont(new Font("defaultFont",1, 18));
                   crunchypack_source.setBackground(Color.WHITE);
+         JScrollPane cpacksource_pane = new JScrollPane(crunchypack_source); 
+         cpacksource_pane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
          GridBagConstraints gb_contrain_cpacktext = new GridBagConstraints(); //container holding gridbag components
          gb_contrain_cpacktext.anchor = GridBagConstraints.SOUTH;
          gb_contrain_cpacktext.fill = GridBagConstraints.BOTH; 
@@ -277,7 +195,7 @@ public class Frame_2 extends GFrame{
          gb_contrain_cpacktext.gridheight = 1; 
          gb_contrain_cpacktext.gridx = 1; 
          gb_contrain_cpacktext.gridy = 8; 
-         this.add(crunchypack_source, gb_contrain_cpacktext);
+         this.add(cpacksource_pane, gb_contrain_cpacktext);
 
          //dummy alignment panel. 
         JPanel v_panel_5 = new JPanel(); 
