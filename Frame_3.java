@@ -24,9 +24,9 @@ import javax.swing.JPanel;
 public class Frame_3 extends JPanel {
     ArrayList<String> group_names; //the available groups
     ArrayList<ArrayList<String>> image_names; //the available image names
-    final int WATCHPOINT_STATE = 1; //the 3 constant states used for drawing objects
-    final int WATCHREGION_STATE = 2; 
-    final int OVERWATCH_STATE = 3; 
+    final public static int WATCHPOINT_STATE = 1; //the 3 constant states used for drawing objects
+    final public static int WATCHREGION_STATE = 2; 
+    final public static int OVERWATCH_STATE = 3; 
     IdentifyParser parser; //the syntatic parser for verifying object trigger code
     ActionParser actionparse; //the syntatic parser for verifying action script code
     final DrawingFrame drawframe; //the frame object which holds the screenshot 
@@ -246,7 +246,7 @@ public class Frame_3 extends JPanel {
 
             //select a drawing operation. 
             JLabel point = new JLabel("Select: "); 
-                point.setFont(new Font("Courier",1, 20));
+                point.setFont(new Font("defaultFont",1, 20));
             GridBagConstraints gb_constrain_toplevel = new GridBagConstraints(); 
             gb_constrain_toplevel.anchor = GridBagConstraints.CENTER; 
             gb_constrain_toplevel.fill = GridBagConstraints.HORIZONTAL; 
@@ -260,7 +260,7 @@ public class Frame_3 extends JPanel {
             
             //text are that displays the objects identifying number
             JTextArea object_number = new JTextArea(); 
-                object_number.setFont(new Font("Courier",1, 25));
+                object_number.setFont(new Font("defaultFont",1, 25));
                 object_number.setEditable(false);
             GridBagConstraints n_control = new GridBagConstraints(); 
             n_control.anchor = GridBagConstraints.WEST; 
@@ -277,7 +277,7 @@ public class Frame_3 extends JPanel {
             JRadioButton wpbutton = new JRadioButton("Watchpoint");
             wpbutton.setMnemonic(KeyEvent.VK_B);
             wpbutton.setActionCommand("Watchpoint");
-                wpbutton.setFont(new Font("Courier",1, 15));
+                wpbutton.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_radiowp = new GridBagConstraints(); 
             gb_constrain_radiowp.anchor = GridBagConstraints.WEST; 
             gb_constrain_radiowp.fill = GridBagConstraints.HORIZONTAL; 
@@ -304,7 +304,7 @@ public class Frame_3 extends JPanel {
             JRadioButton wrbutton = new JRadioButton("Watchregion");
             wrbutton.setMnemonic(KeyEvent.VK_C);
             wrbutton.setActionCommand("Watchregion");
-                wrbutton.setFont(new Font("Courier",1, 15));
+                wrbutton.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_radiowr = new GridBagConstraints(); 
             gb_constrain_radiowr.anchor = GridBagConstraints.WEST; 
             gb_constrain_radiowr.fill = GridBagConstraints.HORIZONTAL; 
@@ -332,7 +332,7 @@ public class Frame_3 extends JPanel {
             JRadioButton wobutton = new JRadioButton("Overwatch");
             wobutton.setMnemonic(KeyEvent.VK_D);
             wobutton.setActionCommand("Overwatch");
-                wobutton.setFont(new Font("Courier",1, 15));
+                wobutton.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_radioow = new GridBagConstraints(); 
             gb_constrain_radioow.anchor = GridBagConstraints.EAST; 
             gb_constrain_radioow.fill = GridBagConstraints.HORIZONTAL; 
@@ -359,7 +359,7 @@ public class Frame_3 extends JPanel {
             JRadioButton wnbutton = new JRadioButton("Deselect");
             wnbutton.setMnemonic(KeyEvent.VK_E);
             wnbutton.setActionCommand("Deselect");
-                wnbutton.setFont(new Font("Courier",1, 15));
+                wnbutton.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_radiodesel = new GridBagConstraints(); 
             gb_constrain_radiodesel.anchor = GridBagConstraints.EAST; 
             gb_constrain_radiodesel.fill = GridBagConstraints.HORIZONTAL; 
@@ -394,7 +394,7 @@ public class Frame_3 extends JPanel {
             
             //text area to write object trigger scripts
             JTextArea criteria = new JTextArea("Write selection code here."); 
-                criteria.setFont(new Font("Courier",1, 15));
+                criteria.setFont(new Font("defaultFont",1, 15));
                 criteria.setEditable(true);
                 criteria.setPreferredSize(new Dimension(550, 230));
             GridBagConstraints gb_constrain_objtrigger = new GridBagConstraints(); 
@@ -428,7 +428,7 @@ public class Frame_3 extends JPanel {
                other objects get this object state in evaluating their own state.
             */
             JButton delete = new JButton("Delete"); 
-                delete.setFont(new Font("Courier",1, 15));
+                delete.setFont(new Font("defaultFont",1, 15));
                 delete.setBackground(Color.RED);
             GridBagConstraints gb_constrain_delete = new GridBagConstraints(); 
             gb_constrain_delete.anchor = GridBagConstraints.WEST; 
@@ -524,7 +524,7 @@ public class Frame_3 extends JPanel {
             
             //navigation button for selecting different drawn objects in the frame
             JButton previous = new JButton(" << "); 
-                previous.setFont(new Font("Courier",1, 15));
+                previous.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_previous = new GridBagConstraints(); 
             gb_previous.anchor = GridBagConstraints.WEST; 
             gb_previous.fill = GridBagConstraints.HORIZONTAL; 
@@ -558,7 +558,7 @@ public class Frame_3 extends JPanel {
             
             //navigation button for selecting the next available object in that object class collection
             JButton next = new JButton(" >> "); 
-                next.setFont(new Font("Courier",1, 15));
+                next.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_next = new GridBagConstraints(); 
             gb_next.anchor = GridBagConstraints.WEST; 
             gb_next.fill = GridBagConstraints.HORIZONTAL; 
@@ -592,7 +592,7 @@ public class Frame_3 extends JPanel {
             
             //button clicked to make the next click within the drawframe draw a watchpoint at that coordinate
             JButton button_add_watchpoint = new JButton("      Add Watchpoint      "); 
-                button_add_watchpoint.setFont(new Font("Courier",1, 15));
+                button_add_watchpoint.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_watchpoint = new GridBagConstraints(); 
             gb_constrain_watchpoint.anchor = GridBagConstraints.CENTER;  
             gb_constrain_watchpoint.weightx = 0; 
@@ -616,7 +616,7 @@ public class Frame_3 extends JPanel {
             
              //button clicked to make the next click within the drawframe draw a watchregion at that coordinate
             JButton button_add_watchregion = new JButton("      Add Watchregion      "); 
-                button_add_watchregion.setFont(new Font("Courier",1, 15));
+                button_add_watchregion.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_watchregion = new GridBagConstraints(); 
             gb_constrain_watchregion.anchor = GridBagConstraints.CENTER;  
             gb_constrain_watchregion.weightx = 0; 
@@ -640,7 +640,7 @@ public class Frame_3 extends JPanel {
             
              //button clicked to make the next click within the drawframe draw an overwatch at that coordinate
             JButton button_add_overwatch = new JButton("      Add Overwatch      "); 
-                button_add_overwatch.setFont(new Font("Courier",1, 15));
+                button_add_overwatch.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_overwatch = new GridBagConstraints(); 
             gb_constrain_overwatch.anchor = GridBagConstraints.CENTER;  
             gb_constrain_overwatch.weightx = 0; 
@@ -666,7 +666,7 @@ public class Frame_3 extends JPanel {
             
             //button that attaches this object trigger script to the currently selected object
             JButton button_add_identscript = new JButton("Save Identity Script"); 
-                button_add_identscript.setFont(new Font("Courier",1, 15));
+                button_add_identscript.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_idscript = new GridBagConstraints(); 
             gb_constrain_idscript.anchor = GridBagConstraints.NORTH; 
             gb_constrain_idscript.fill = GridBagConstraints.HORIZONTAL; 
@@ -739,7 +739,7 @@ public class Frame_3 extends JPanel {
 
             //area for writing action scripts. 
             JTextArea action_script_area = new JTextArea("Write action script code here."); 
-                action_script_area.setFont(new Font("Courier",1, 15));
+                action_script_area.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_constrain_scriptarea = new GridBagConstraints(); 
             gb_constrain_scriptarea.anchor = GridBagConstraints.NORTH; 
             gb_constrain_scriptarea.fill = GridBagConstraints.BOTH; 
@@ -755,7 +755,7 @@ public class Frame_3 extends JPanel {
             
             //button to add an action script
             JButton button_add_action_script = new JButton("Save Action Script"); 
-                button_add_action_script.setFont(new Font("Courier",1, 15));
+                button_add_action_script.setFont(new Font("defaultFont",1, 15));
             GridBagConstraints gb_script = new GridBagConstraints(); 
             gb_script.anchor = GridBagConstraints.NORTH;  
             gb_script.fill = GridBagConstraints.HORIZONTAL; 
