@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CrunchyCollection extends JPanel{
         
-        String mock_text = " a \n b \n c \n d \n e \n"; //filler text for debugging purposes
+        String mock_text = ""; //filler text for debugging purposes
         ArrayList<JTextArea> panel_text_source; //adds the four tabs that will make up this "folder"
         
         //called with arrays of group and image names
