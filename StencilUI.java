@@ -1,5 +1,11 @@
 /*
 Entry point. Invokes the GUI thread and creates a card layout object which manages the interface panels. 
+
+REFACTOR REPORT: TODO
+    Still uses debug name for output file. Make it use the supplied name in crunchypack input header. (HIGH)
+    Uses String instead of stringbuilder for master output. (LOW: This is not a speed-critical component. Saves milliseconds at best.)
+    DrawingFrame.select_rect_draw method should put all rect drawing graphics in a single method. (MEDIUM)
+    
  */
 package stencilui;
 
