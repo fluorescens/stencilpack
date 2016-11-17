@@ -14,4 +14,4 @@ I want to a count of how many times a twitch user recieves a donation during the
 This program is offered as source code and can be built from any java 8 compiler. Latest java compilers can be downloaded from Oracle: follow their instructions for installation. 
 
 # Submit Changes:
-Submit proposed changes in plaintext with file name and line numbers to project manager: james@leppek.us
+Submit proposed changes in plaintext with file name and line numbers to project manager: jamesl@leppek.us
