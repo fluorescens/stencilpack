@@ -228,8 +228,8 @@ public class CardsManager extends JFrame{
               else if(currentCard == 2) {
                   //get the filestring and test if it exists. 
                   if(DEBUG_MODE == 1) {
-                      IMGPATH = "C:\\Users\\JamesH\\Pictures\\Screenshots\\largetest.png";
-                      CRUNCHYPACK_PATH = "C:\\Users\\JamesH\\Documents\\NetBeansProjects\\StencilUI\\outtest.txt"; 
+                      IMGPATH = "C:\\Users\\JamesH\\Pictures\\Screenshots\\tnd_stencil.bmp";
+                      CRUNCHYPACK_PATH = "C:\\Users\\JamesH\\Pictures\\Screenshots\\Crunchypack_map_tnd_pages.txt"; 
                   }
                   else {
                     IMGPATH = Frame_2.screenshot_source.getText();
@@ -316,7 +316,9 @@ public class CardsManager extends JFrame{
                         int adj_width = (int)((double)cwp.get_width()*screenshot_factor); 
                         int adj_height = (int)((double)cwp.get_height()*screenshot_factor);
                         String watchregion_ident_script = cwp.get_ident_string(); 
-                        object_table += "R(" + Integer.toString(adj_x) + "," + Integer.toString(adj_y) + "," + Integer.toString(adj_width) + "," + Integer.toString(adj_height)+ ") ";  
+                        //----ERROR IS HERE. Watchregion not printing ID to lsit. -------//
+                        //ADD INSERT ID AFTER R HERE. 
+                        object_table += "R" + Integer.toString(cwp.get_identifier()) + "(" + Integer.toString(adj_x) + "," + Integer.toString(adj_y) + "," + Integer.toString(adj_width) + "," + Integer.toString(adj_height)+ ") ";  
                         object_table += watchregion_ident_script  + ";" + System.lineSeparator();
                     }
                 
