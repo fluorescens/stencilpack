@@ -923,9 +923,9 @@ public class IdentifyParser {
         
         
         
-        
-        if(!local_tokens.isEmpty()) {
-            Qsort dat = new Qsort(local_tokens); 
+        //AHA! Blank objects are intentionally empty of tokens. 
+        if(!local_tokens.isEmpty() || sample.length() == 0) {
+            Qsort dat = new Qsort(local_tokens); //qsort crashes on empty set. 
             local_tokens = dat.get_sorted(); 
             //System.out.println(dat.toString());
             int contig_ok = check_contig(local_tokens, testme); 
@@ -997,11 +997,6 @@ public class IdentifyParser {
     */
     private int check_contig(ArrayDeque<Token> tokenlist, String testing) {
         int leave_off = 0; //track where the last token to be checked ended
-        if(tokenlist.isEmpty()) {
-            String empty_error = "The script is empty."; 
-            error_notifications.add(empty_error);
-            return 1; 
-        }
         for (Token t : tokenlist) {
             int last = t.get_start(); 
             //if the next token doesn't start where the last token left off, there is an unrecognized token
@@ -1381,9 +1376,6 @@ public class IdentifyParser {
                 //make key identifier available as initialized in hmap. 
                 initialized.replace(key, 1); //key set to initialized. 
             }
-            else {
-                //do nothing. 
-            }
         } 
         
         //now objects that EXCLUSIVLY appear in overwatch dependent. 
@@ -1486,7 +1478,9 @@ public class IdentifyParser {
         for (Token t : keydata) {
             tdata.add(t); 
         }
-        quicksort(0, tdata.size() - 1); 
+        if(keydata.size() > 1) {
+            quicksort(0, tdata.size() - 1);    
+        }
     }
     
     private void quicksort(int lowerindex, int higherindex) {
