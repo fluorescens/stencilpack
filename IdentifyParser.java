@@ -560,7 +560,7 @@ public class IdentifyParser {
         }
         
         
-        if(!local_tokens.isEmpty()) {
+        if(!local_tokens.isEmpty() || sample.length() == 0) {
             Qsort dat = new Qsort(local_tokens); 
             local_tokens = dat.get_sorted(); 
             //System.out.println(dat.toString());
