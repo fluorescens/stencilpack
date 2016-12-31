@@ -39,6 +39,7 @@ public class CardsManager extends JFrame{
      private ArrayList<ArrayList<String>> crunchypack_names; //alias of images in the groups
      final private int CRUNCHYPACK_DATA_LINES = 2; //How many lines are non color matrix data
      private Frame_3 ref_jp3; //reference to frame 3 created object
+     private String CRUNCHYPACK_FILE_NAME; 
      
      
      public CardsManager() {
@@ -240,6 +241,12 @@ public class CardsManager extends JFrame{
                   int verify_cpack = verify_file(CRUNCHYPACK_PATH); 
                   if(verif_status == 0 && verify_cpack == 0) {
                       //file exists and is reachable. 
+                      
+                      //extract name from end of file path. 
+                      int cpack_start_fname = CRUNCHYPACK_PATH.indexOf("Crunchypack_map_"); 
+                      int oset = "Crunchypack_map_".length(); 
+                      CRUNCHYPACK_FILE_NAME = CRUNCHYPACK_PATH.substring(cpack_start_fname + oset, CRUNCHYPACK_PATH.length() - 4); 
+                      
                       int filesize = assess_file_size(IMGPATH); //get the size of the image background
                       int crunchypack_status = crunchypack_tokenize(CRUNCHYPACK_PATH); //extract image information from crunchypack
                       if(filesize == 0 && crunchypack_status == 0) {
@@ -351,7 +358,8 @@ public class CardsManager extends JFrame{
                
                 //write the file 
                 try {
-                    File wsource = new File("out_ts.txt"); 
+                    String output_name = "Stencilpack_" + CRUNCHYPACK_FILE_NAME; 
+                    File wsource = new File(output_name); 
                     FileWriter fw = new FileWriter(wsource.getAbsoluteFile());
                     BufferedWriter bw = new BufferedWriter(fw);
                     bw.write(master_out);
