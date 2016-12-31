@@ -21,7 +21,7 @@ public class StencilUI {
      public static final int FHEIGHT = 500; //size of a window
      public static final int FWIDTH = 1100;
      static Dimension fsize = new Dimension(FWIDTH, FHEIGHT); //default window size
-     public final static int DEBUG_MODE = 0; //debug bit. 1 for on
+     public final static int DEBUG_MODE = 1; //debug bit. 1 for on
 
      
     public static void main(String[] args) {
